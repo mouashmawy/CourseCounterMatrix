@@ -62,7 +62,7 @@ for i in range(len(AllCourseMatrix)):
 
 #adding number of registered students in every course
 SomeDataSheet['A1'].value ="Course"
-SomeDataSheet['B1'].value ="number registered"
+SomeDataSheet['B1'].value ="Number registered"
 for i in range(2,outSheet.max_row+1):
     SomeDataSheet.cell(row=i, column=1).value = outSheet.cell(row=1, column=i).value
     SomeDataSheet.cell(row=i,column=2).value = outSheet.cell(row=i,column=i).value
