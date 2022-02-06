@@ -1,4 +1,4 @@
-# Course Counter
+# Course Counter Matrix
 
 ## Goal
 In our university, there are many students that take many different courses from different majors together and Me with some of my collegues have to make a schedule for the final exam without any conflicts (as we are the student represenataives for CIE major).
