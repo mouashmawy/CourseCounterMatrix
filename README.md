@@ -7,20 +7,22 @@
 
 ## How it works
 - This script is made to take the courses registered for each student in the university in an excel and then generate another excel containing matrix of Course Matches - number of students for each registered  courses with another one (eg. number of students taking both chem and phys are 108).
-</br>
+
 
 ## Added features
 
 - Changed color based on number of matches (ex: matches between 6 and 15 make it yellow) 
 - Added comment for every cell with the the courses making matches for easy searching 
-</br>
+
 
 
 ## Notes
 - Note 1: This script works on any large data.
 - Note 2: Original Matrix of our university isn't attached as it is confidential so you can find an input file file as an example to try
-</br>
+
+
 ## Examples
+
 ### input Sheet:
 
 <img align="left" width="500px" src="https://i.ibb.co/jZ4Tjr5/Screenshot-92.png" /></br></br></br></br></br></br></br></br></br></br></br>
