@@ -2,10 +2,11 @@
 first_column = 5
 first_row = 2
 Input_file_name = "inputExample.xlsx"
-Output_file_name = "x.xlsx"
+Output_file_name = "Output1.xlsx"
 ############################################
 from openpyxl import *
 from openpyxl.styles import *
+from openpyxl.comments import Comment
 
 #importing current file that contains data
 wb = load_workbook(Input_file_name)
@@ -69,13 +70,15 @@ for i in range(2,outSheet.max_row+1):
 
 
 #color code for every number
-diagonal = [0, 0, '5555FF']
-first = [1,5,'00FF00']
-second = [6,15,'FFFF00']
-third = [16,500,'FF0000']
+diagonal = [0, 0, '8888FF']
+first = [1,5,'88FF88']
+second = [6,15,'FFFF88']
+third = [16,500,'FF8888']
 
+#for loop for every cell to make conditional formatting and comments
 for i in range(2,outSheet.max_row+1):
     for j in range(2,outSheet.max_column+1):
+        #conditional formatting
         outSheet.cell(row=i,column=j).alignment = Alignment(horizontal="center") #alignning it to ceter
         cellValue = outSheet.cell(row=i,column=j).value #saving cell velue
 
@@ -86,7 +89,10 @@ for i in range(2,outSheet.max_row+1):
         elif (cellValue>=third[0] and cellValue<=third[1]):
            outSheet.cell(row=i,column=j).fill = PatternFill(start_color=third[2],fill_type='solid')
 
-
+        #comments
+        course1 = outSheet.cell(row=i, column=1).value
+        course2 = outSheet.cell(row=1, column=j).value
+        outSheet.cell(row=i, column=j).comment = Comment(f"{course1} & {course2}","MA")
 
 #The diagonal (same course)
 for i in range(2,outSheet.max_row+1):
