@@ -2,7 +2,7 @@
 first_column = 5
 first_row = 2
 Input_file_name = "inputExample.xlsx"
-Output_file_name = "output1.xlsx"
+Output_file_name = "x.xlsx"
 ############################################
 from openpyxl import *
 from openpyxl.styles import *
@@ -68,12 +68,36 @@ for i in range(2,outSheet.max_row+1):
     SomeDataSheet.cell(row=i,column=2).value = outSheet.cell(row=i,column=i).value
 
 
-#Changing styles for some cells
+#color code for every number
+diagonal = [0, 0, '5555FF']
+first = [1,5,'00FF00']
+second = [6,15,'FFFF00']
+third = [16,500,'FF0000']
+
 for i in range(2,outSheet.max_row+1):
-    outSheet.cell(row=i,column=i).fill = PatternFill(start_color='FFFF00',fill_type='solid')
+    for j in range(2,outSheet.max_column+1):
+        outSheet.cell(row=i,column=j).alignment = Alignment(horizontal="center") #alignning it to ceter
+        cellValue = outSheet.cell(row=i,column=j).value #saving cell velue
+
+        if (cellValue>=first[0] and cellValue<=first[1]):
+           outSheet.cell(row=i,column=j).fill = PatternFill(start_color=first[2],fill_type='solid')
+        elif (cellValue>=second[0] and cellValue<=second[1]):
+           outSheet.cell(row=i,column=j).fill = PatternFill(start_color=second[2],fill_type='solid')
+        elif (cellValue>=third[0] and cellValue<=third[1]):
+           outSheet.cell(row=i,column=j).fill = PatternFill(start_color=third[2],fill_type='solid')
+
+
+
+#The diagonal (same course)
+for i in range(2,outSheet.max_row+1):
+    outSheet.cell(row=i,column=i).fill = PatternFill(start_color=diagonal[2], fill_type='solid')
+
+#sheet headers
 for i in range(1,outSheet.max_row+1):
-    outSheet.cell(row=i, column=1).font = Font(bold=True)
-    outSheet.cell(row=1, column=i).font = Font(bold=True)
+    outSheet.cell(row=i, column=1).font = Font(bold=True) #row
+    outSheet.cell(row=i, column=1).alignment = Alignment(horizontal="center")  # alignning it to ceter
+    outSheet.cell(row=1, column=i).font = Font(bold=True) #column
+    outSheet.cell(row=1, column=i).alignment = Alignment(horizontal="center")  # alignning it to ceter
 
 
 #saving the file
