@@ -20,7 +20,7 @@ SomeDataSheet.title = "SomeDataSheet"
 #Reading coyrses names from main file
 courseNamesList = []
 for course in range(5,s.max_column+1):
-    courseNamesList.append(s.cell(row=1,column=course).value)
+    courseNamesList.append(s.cell(row=1,column=co-urse).value)
 
 
 #writing courses names to Matrix
