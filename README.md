@@ -10,6 +10,9 @@
 ```
 pip install -r requirements.txt
 ```
+- You can install it through running batch file "install-lib-requirements.bat"
+
+
 
 ## Authors
 - Moustafa Ashmawy
