@@ -5,6 +5,15 @@
 
 - This software calculates number of students taking 2 courses together (eg. number of students taking both chem and phys are 108) so that we can make a schedule without any conflicts.
 
+## Installs
+- installing all packages
+```
+pip install -r requirements.txt
+```
+
+## Authors
+- Moustafa Ashmawy
+
 ## How it works
 - This script is made to take the courses registered for each student in the university in an excel and then generate another excel containing matrix of Course Matches - number of students for each registered  courses with another one (eg. number of students taking both chem and phys are 108).
 
@@ -34,3 +43,4 @@
 ### Small snapshot from original sheet of university:
 
 <img align="left" width="500px" src="https://i.ibb.co/P9cDzPC/Screenshot-93.png" /></br></br></br></br></br></br></br></br></br></br></br>
+
